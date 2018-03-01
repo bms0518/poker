@@ -14,15 +14,15 @@ import cards.Suit;
 
 public enum PokerHands {
 
-  HIGH_CARD((cards) -> highCardEvaluator(cards)),
-  PAIR((cards) -> pairEvaluator(cards)),
-  TWO_PAIR((cards) -> twoPairEvaluator(cards)),
-  THREE_OF_A_KIND((cards) -> threeOfAKindEvaluator(cards)),
-  STRAIGHT((cards) -> straightEvaluator(cards)),
-  FLUSH((cards) -> flushEvaluator(cards)),
-  FULL_HOUSE((cards) -> fullHouseEvaluator(cards)),
-  FOUR_OF_A_KIND((cards) -> fourOfAKindEvaluator(cards)),
-  STRAIGHT_FLUSH((cards) -> straightFlushEvaluator(cards));
+  HIGH_CARD(PokerHands::highCardEvaluator),
+  PAIR(PokerHands::pairEvaluator),
+  TWO_PAIR(PokerHands::twoPairEvaluator),
+  THREE_OF_A_KIND(PokerHands::threeOfAKindEvaluator),
+  STRAIGHT(PokerHands::straightEvaluator),
+  FLUSH(PokerHands::flushEvaluator),
+  FULL_HOUSE(PokerHands::fullHouseEvaluator),
+  FOUR_OF_A_KIND(PokerHands::fourOfAKindEvaluator),
+  STRAIGHT_FLUSH(PokerHands::straightFlushEvaluator);
 
   private final Function<Hand, Boolean> handEvaluator;
 
